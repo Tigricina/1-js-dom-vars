@@ -1,17 +1,16 @@
 'use strict';
-function NewPerson(n, p, a, s) {
-    this.name = n;
-    this.profession = p;
-    this.age = a;
-    this.salary = s;
+function NewPerson(name, profession, age, salary) {
+    this.name = name;
+    this.profession = profession;
+    this.age = age;
+    this.salary = salary;
 }
 
-var personNames =["Ekaterina", "Mariya", "Oleg", "Yan", "Egor", "Brungilda", "Semen", "Mephodii", "Zinaida", "Marfa"];
+var personNames =['Ekaterina', 'Mariya', 'Oleg', 'Yan', 'Egor', 'Brungilda', 'Semen', 'Mephodii', 'Zinaida', 'Marfa'];
 var personProfessions = ['engineer', 'manager', 'prime minister', 'programmer', 'teacher', 'writer', 'singer', 'seller', 'buyer', 'deliveryman'];
 
- function choice(min, max) {
-	var elementOfArray = Math.floor(Math.random() * (max - min + 1) + min);
-	return elementOfArray
+function choice(min, max) { //выбоор случайного числа из любого диапозона для разных массивов
+		return Math.floor(Math.random() * (max - min + 1) + min)
 } 
 
 var persons = [];
@@ -19,7 +18,7 @@ var cards = [];
 var salaries = []; 
 var infozone = [];
 var infos = [];
-var mainzone = document.getElementById("mainzone");
+var mainzone = document.getElementById('mainzone');
 
  for (var i = 0;i=personProfessions.length;i++) {
     var namerand = Math.floor(Math.random() * personNames.length);
@@ -30,7 +29,7 @@ var mainzone = document.getElementById("mainzone");
     persons[i] = new NewPerson(personNames[namerand], personProfessions[jobrand], agerand, salaryrand);
     personNames.splice(namerand,1);
     personProfessions.splice(jobrand,1);
-        
+
     cards = document.createElement('ul');
     cards.id = 'personCard';
     mainzone.appendChild(cards);
@@ -73,7 +72,7 @@ if (persons[i].profession == 'deliveryman') {
  infos.style.textDecoration = 'underline' 
 };
 
-var girlname = ["Ekaterina", "Mariya", "Brungilda", "Zinaida", "Marfa"];
+var girlname = ['Ekaterina', 'Mariya', 'Brungilda', 'Zinaida', 'Marfa'];
  for (var k = 0; k<=girlname.length; k++) { 
  	if (persons[i].name == girlname[k]) { 
  
